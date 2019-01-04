@@ -1,0 +1,12 @@
+command you used to start: 
+docker run -it ubuntu
+
+commands you used to fix the ensuing problems
+apt-get update; apt-get install curl
+sh -c 'read website; sleep 3; curl http://$website;'
+
+
+
+oneliner: docker run  --rm -it --name upside  ubuntu:16.04 sh -c 'apt-get update; apt-get upgrade -y; apt-get install curl; read website; sleep 3; curl http://$website;'
+
+
