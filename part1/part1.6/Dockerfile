@@ -7,4 +7,5 @@ RUN apt install -y nodejs
 EXPOSE 8000
 RUN npm install --save-dev cross-env
 VOLUME /mydir/
-CMD FRONT_URL=<part1/part1.5/> npm start
+CMD FRONT_URL=http://localhost:5000 npm start
+
