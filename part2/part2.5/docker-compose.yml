@@ -1,0 +1,38 @@
+version: '3.5'
+
+services:
+
+  frondend:
+    build: ./frontend/ml-kurkkumopo-frontend/
+    expose:
+       - "3000"
+
+    
+  backend:
+    build: ./backend/ml-kurkkumopo-backend/
+    expose:
+       - "5000"
+    ports:
+      - "5000:5000"   
+
+           
+    volumes:
+      - ./model:/src/model  
+
+  training: 
+    build: ./training/ml-kurkkumopo-training/
+    volumes:
+      - ./model:/src/model 
+      - ./imgs:/src/imgs
+
+
+  nginx: 
+    image: nginx:latest
+    container_name: production_nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+        
+
+

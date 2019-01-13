@@ -1,0 +1,14 @@
+version: '3.5'
+
+services:
+  frontend-example-docker:
+    build: ~/Documents/DevOps_with_Docker/Docker_exe/part1/part1.5
+    ports:
+      - "5000:5000"
+
+  backend-example-docker:
+    build: ~/Documents/DevOps_with_Docker/Docker_exe/part1/part1.6
+    ports:
+       - "8000:8000"
+
+     
